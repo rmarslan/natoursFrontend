@@ -1,0 +1,130 @@
+.form{
+    max-width: 50%;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    // float: left;
+    @include respond(tab-land){
+        max-width: 75%;
+        margin: 0 auto;
+    }
+    @include respond(tab-port){
+        max-width: 70%;
+        margin: 0 auto;
+    }
+
+    @include respond (phone){
+        max-width: 95%;
+    }
+
+    &__group{
+        position: relative;
+        &:not(:last-child){
+            margin-bottom: 4rem;
+        }
+    }
+
+    &__input{
+        display: block;
+        width: 90%;
+        border: none;
+        border-radius: 1px;
+        background-color: #fff;
+        border-bottom: 3px solid transparent;
+        padding: 1.5rem 1rem;
+        transition: all 0.3s;
+
+        @include respond(tab-land){
+            width: 65%;
+        }
+        @include respond(tab-port){
+            width: 60%;
+        }
+        @include respond(phone){
+            width: 90%;
+        }
+        &:focus{
+            outline: none;
+            border-bottom: 3px solid $color-primary;
+            box-shadow: 0 0.5rem 2rem rgba($color-black, 0.5);
+        }
+
+        &:focus:invalid {
+            border-bottom: 3px solid $color-secondary-dark;
+        }
+
+        &::-webkit-input-placeholder{
+            color: $color-grey-dark-3;
+            font-size: 1.6rem;
+        }
+
+        &::-webkit-input-placeholder{
+            color: $color-grey-dark-3;
+            font-size: 1.6rem;
+        }
+    }
+
+    &__input:placeholder-shown + &__label{
+        bottom: 1.5rem;
+        left: 1rem;
+        opacity: 0;
+        transition: all 0.4s;
+    }
+
+    &__label{
+        position: absolute;
+        bottom: -3rem;
+        left: 1rem;
+        opacity: 1;
+        transition: all 0.4s;
+    }
+}
+
+.radio{
+
+    &__group{
+        display: inline-block;
+        &:not(:last-child){
+            margin-right: 4rem;
+        }
+    }
+
+    &__input{
+        display: none;
+    }
+
+    &__input:checked + label > &__custom::after{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__custom{
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        border: 5px solid $color-primary;
+        background-color: transparent;
+        display: inline-block;
+        position: relative;
+        top: 8px;
+        margin-right: 1.5rem;
+
+        &::after{
+            content: "";
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            border: none;
+            background-color: $color-primary;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+    }
+}

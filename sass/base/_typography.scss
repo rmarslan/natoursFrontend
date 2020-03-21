@@ -1,0 +1,100 @@
+body{
+    font-family: $font-main;
+    font-weight: 400;
+    line-height: 1.7;
+    font-size: $font-size-1;
+    text-rendering: optimizeLegibility;
+    color: $color-grey-dark-2;
+    padding: 3rem;
+
+    @include respond (tab-port){
+        padding: 0;
+        line-height: 1.6;
+    }
+}
+
+.heading-primary{
+    color: $color-grey-light-1;
+    text-transform: uppercase;
+    font-family: $font-display;
+    backface-visibility: hidden;
+
+    &--sub,
+    &--main{
+        display: block;
+        animation-duration: 2s;
+        animation-timing-function: ease;
+    }
+
+    &--main{
+        font-size: 6rem;
+        font-weight: 300;
+        letter-spacing: 3rem;
+
+        animation-name: slideRight;
+
+        @include respond (phone){
+            letter-spacing: 2rem;
+            font-size: 4rem;
+        }
+    }
+
+    &--sub{
+        letter-spacing: 1.5rem;
+        font-size: 2rem;
+        font-weight: bold;
+
+        animation-name: slideLeft;
+        @include respond (phone){
+            letter-spacing: 0.5rem;
+        }
+    }
+}
+
+
+.heading-secondry{
+    font-family: $font-main;
+    font-weight: 501;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    transition: all 0.2s;
+
+    display: inline-block;
+    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    &:hover{
+        transform: skewY(2deg) skewX(15deg) scale(1.1);
+        text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+    }
+
+    @include respond(phone){
+        font-size: 2rem;
+        font-weight: 800;
+    }
+}
+
+.heading-3{
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: 0.1rem;
+    word-spacing: 0.1rem;
+    color: $color-grey-dark-3;
+}
+
+.paragraph{
+    &:not(:last-of-type){
+        margin-bottom: 3rem;
+    }
+
+    font-family: $font-main;
+    font-size: 1.6rem;
+    line-height: inherit;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    color: $color-grey-dark-3;
+}

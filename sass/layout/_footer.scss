@@ -1,0 +1,15 @@
+.footer{
+    background-color: $color-grey-dark-1;
+    padding: 10rem 0;
+
+    &__logo{
+        height: 10rem;
+        margin-bottom: 6rem;
+    }
+
+    &__copyright{
+        display: inline-block;
+        padding-top: 0.8rem;
+        border-top: 1px solid $color-grey-dark-4;
+    }
+}
